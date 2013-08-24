@@ -7,6 +7,7 @@
 
 <link href="css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-responsive.css"/ rel="stylesheet">
+<link href="css/cssForStartProject.css" rel="stylesheet" />
 <style>
 		#headder
 		{
@@ -14,14 +15,11 @@
 			margin-right: auto;
 			width: 80%;		
 		}
-		#container
-		{
-			margin-left: auto;
-			margin-right: auto;
-			width: 90%;
-		}
+				
 		
 </style>
+
+
 
 </head>
 <body>
@@ -59,35 +57,131 @@
 	              <li><a href="#Review" data-toggle="tab">Review</a></li>
 	              
 	            </ul>
-	            <div id="myTabContent" class="tab-content">
-	              <div class="tab-pane fade in active" id="Guildlines">
-	                <p>Implement Guildline</p>
-	              </div>
-	              <div class="tab-pane fade" id="Basics">
-	                <p>Implement Basics</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Rewards">
-	                <p>Implement Rewards</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Story">
-	                <p>Implement Story</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Aboutyou">
-	                <p>Implement About you</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Account">
-	                <p>implement Account</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Review">
-	                <p>implement Review</p>
-	              </div>
-	              
-	            </div>
+	            <form> 
+		            <div id="myTabContent" class="tab-content">
+		              <div class="tab-pane fade in active" id="Guildlines">
+		                <p>Implement Guildline</p>
+		              </div>
+		              <div class="tab-pane fade row-fluid" id="Basics">
+		                
+			                <div class="hero-unit" id="Basics-Head">
+			                	<h2>Meet your new project</h2>
+			                	<p>Start by giving it a name, a pic, and other important details.</p>
+			                </div>
+			                
+			                <div class="offset1 span7" id="leftContend">
+		                
+			                	<div id="contendProjectTitle" >
+			                		
+			                		<div class="span3">
+			                			<strong>Project title</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			Your project title should be simple, specific, and memorable, and it should include the title of the creative project you're raising funds for. Avoid words like "help,โ€� "support,โ€� or "fund.โ€�
+			                		</div>
+					               
+			                	</div>
+		                	  	
+		                	  	<div id="contendCetegory">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Cetegory</strong>
+			                		</div>
+			                		<div class="span9">
+			                			
+			                			<select>
+			                				<option>1</option>
+			                				<option>2</option>
+			                				<option>3</option>
+			                			</select>
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendShortBlurb">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Short blurb</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<textarea cols="100" rows="3"></textarea><br />
+			                			If you had to describe your project in one tweet, how would you do it?
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendLocation">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Location</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendFundingDuration">
+		                	  		<div class="span3">
+			                			<strong>Funding duration</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="radio" name="type" /> <span>Numberday</span> <input type="text"/><br/>
+			                			<input type="radio" name="type"/> <span>End on date & time</span><br />
+			                			<p>
+			                				We recommend that projects last 30 days or less. Shorter durations have higher success rates, and will create a helpful sense of urgency around your project. For more on duration, see Kickstarter School.
+			                			</p>
+			                			<p>
+			                				Note: After your project ends, there is a 14-day window for collecting and processing pledges. After that, you can transfer funds from your Amazon account to your bank account. Please plan accordingly.
+			                			</p>
+			                			
+			                		</div>
+		                	  	</div>
+		                	  	
+		                	  	<div id="contndFundingGoal">
+		                	  		<div class="span3">
+			                			<strong>Funding goal</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			<p>Your funding goal should be the minimum amount needed to complete the project and fulfill all rewards. Because funding is all-or-nothing, you can always raise more than your goal but never less.</p>
+			                			<p>If your project is successfully funded, Kickstarter will apply a 5% fee to the funds raised, and Amazon will apply credit card processing fees (between 3-5%). If funding isn't successful, there are no fees.</p>
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	</div>
+		                	
+		                	<div class="span3" style="background-color: blue">
+		                		
+		                	</div>
+		                	
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Rewards">
+		                <p>Implement Rewards</p>
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Story">
+		                <p>Implement Story</p>
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Aboutyou">
+		                <p>Implement About you</p>
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Account">
+		                <p>implement Account</p>
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Review">
+		                <p>implement Review</p>
+		              </div>
+		              
+		            </div>
+		        </form>    
 	      </div>	
 	</div>
 	
