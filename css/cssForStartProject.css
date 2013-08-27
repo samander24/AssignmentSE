@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+		
+		#container
+		{
+			margin-left: auto;
+			margin-right: auto;
+			width: 90%;
+		}
+		#Basics-Head > *
+		{
+			text-align: center;
+			
+		}
+	
+		#leftContend > div
+		{
+			background-color:#F2F2F2;
+			margin-bottom: 3% !important;
+		}
+			
+		
+		#contendProjectTitle
+		{
+			display: inline-block ;
+			
+			
+		}
+		#contendProjectTitle > *
+		{
+			height: 100%;
+			
+			
+		}
+		#contendProjectTitle input
+		{
+			width: 80%;
+		}
+		#contendProjectTitle strong
+		{
+			font-size: 15px;
+		}
+		#contendShortBlurb textarea
+		{
+			width: 80%;
+		}
+		
+		#contendCetegory
+		{
+			
+			height: 30px;
+		}
+		#contendCetegory select
+		{
+			width: 80%;
+		}
+		#contendFundingDuration
+		{
+			height: 200px;
+		}
+		#contendLocation
+		{
+			height: 100px;
+		}
+		#contendLocation input
+		{
+			width: 80%;
+		}		
+		#contendShortBlurb
+		{
+			height: 150px;
+		}
+		#contndFundingGoal
+		{
+			height: 250px;
+		}	
+		#contndFundingGoal input
+		{
+			width: 80%;
+		}
+
+
+
+/*--------------------------------------------------------------------*/
+		#Aboutyou-Head
+		{
+			text-align: center;
+		}
+
+		#contendProfilePhoto
+		{
+			height: 80px;
+		}
+		#contendName
+		{
+			height: 60px;
+		}
+		#contendBiography
+		{
+			height: 250px;
+		}
+		#contentYourLocation
+		{
+			height: 80px;
+		}
+		#contndWebside
+		{
+			height: 120px;
+		}
+		#contendName  input
+		{
+			width: 80%;
+		}
+		#contendBiography textarea
+		{
+			width: 400px;
+		}
+		#contentYourLocation input
+		{
+			width: 80%;
+		}
+
+		#rightInput > *
+		{
+			display: inline;
+			float: left;
+		}
+		#rightInput input
+		{
+			width: 155px;
+		}

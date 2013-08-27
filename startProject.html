@@ -7,6 +7,10 @@
 
 <link href="css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-responsive.css"/ rel="stylesheet">
+<link href="css/cssForStartProjectTabBasic.css" rel="stylesheet" />
+<link href="css/cssForStartProjectTabAboutyou.css" rel="stylesheet" />
+<link href="css/cssForStartProjectTabAccount.css" rel="stylesheet" />
+<link href="css/cssForStartProjectTabRewards.css" rel="stylesheet" />
 <style>
 		#headder
 		{
@@ -14,14 +18,11 @@
 			margin-right: auto;
 			width: 80%;		
 		}
-		#container
-		{
-			margin-left: auto;
-			margin-right: auto;
-			width: 90%;
-		}
+				
 		
 </style>
+
+
 
 </head>
 <body>
@@ -59,35 +60,607 @@
 	              <li><a href="#Review" data-toggle="tab">Review</a></li>
 	              
 	            </ul>
-	            <div id="myTabContent" class="tab-content">
-	              <div class="tab-pane fade in active" id="Guildlines">
-	                <p>Implement Guildline</p>
-	              </div>
-	              <div class="tab-pane fade" id="Basics">
-	                <p>Implement Basics</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Rewards">
-	                <p>Implement Rewards</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Story">
-	                <p>Implement Story</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Aboutyou">
-	                <p>Implement About you</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Account">
-	                <p>implement Account</p>
-	              </div>
-	              
-	              <div class="tab-pane fade" id="Review">
-	                <p>implement Review</p>
-	              </div>
-	              
-	            </div>
+	            <form> 
+		            <div id="myTabContent" class="tab-content">
+		              <div class="tab-pane fade in active" id="Guildlines">
+		                <p>Implement Guildline</p>
+		              </div>
+		              <div class="tab-pane fade row-fluid" id="Basics">
+		                
+			                <div class="hero-unit" id="Basics-Head">
+			                	<h2>Meet your new project</h2>
+			                	<p>Start by giving it a name, a pic, and other important details.</p>
+			                </div>
+			                
+			                <div class="offset1 span7" id="leftContend">
+		                
+			                	<div id="contendProjectTitle" >
+			                		
+			                		<div class="span3">
+			                			<strong>Project title</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+											Your project title should be simple, specific, and memorable, and it should include 
+											the title of the creative project you're raising funds for. Avoid words like "help","support","fund" 
+			                		</div>
+					               
+			                	</div>
+		                	  	
+		                	  	<div id="contendCetegory">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Cetegory</strong>
+			                		</div>
+			                		<div class="span9">
+			                			
+			                			<select>
+			                				<option>1</option>
+			                				<option>2</option>
+			                				<option>3</option>
+			                			</select>
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendShortBlurb">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Short blurb</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<textarea cols="100" rows="3"></textarea><br />
+			                			If you had to describe your project in one tweet, how would you do it?
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendLocation">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Location</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendFundingDuration">
+		                	  		<div class="span3">
+			                			<strong>Funding duration</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="radio" name="type" /> <span>Numberday</span> <input type="text"/><br/>
+			                			<input type="radio" name="type"/> <span>End on date & time</span><br />
+			                			<p>
+			                				We recommend that projects last 30 days or less. Shorter durations have higher success rates, and will create a helpful sense of urgency around your project. For more on duration, see Kickstarter School.
+			                			</p>
+			                			<p>
+			                				Note: After your project ends, there is a 14-day window for collecting and processing pledges. After that, you can transfer funds from your Amazon account to your bank account. Please plan accordingly.
+			                			</p>
+			                			
+			                		</div>
+		                	  	</div>
+		                	  	
+		                	  	<div id="contndFundingGoal">
+		                	  		<div class="span3">
+			                			<strong>Funding goal</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			<p>Your funding goal should be the minimum amount needed to complete the project and fulfill all rewards. Because funding is all-or-nothing, you can always raise more than your goal but never less.</p>
+			                			<p>If your project is successfully funded, Kickstarter will apply a 5% fee to the funds raised, and Amazon will apply credit card processing fees (between 3-5%). If funding isn't successful, there are no fees.</p>
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	</div>
+		                	
+		                	<div class="span3" style="background-color: blue">
+		                		
+		                	</div>
+		                	
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Rewards">
+		                <div class="hero-unit pagination-centered">
+									  <h2>Every project needs great rewards.</h2>
+									  <small>Be creative and price them fairly. Explore other projects for inspiration!</small>  
+									</div>
+									<div class="row-fluid" >
+										<div class="span9" id="BGBlue">
+											<div class="row-fluid">
+												<div class="span3" >
+													<button type="button" class="btn " data-toggle="collapse" data-target="#show">
+													  Reward#1
+													</button>
+													 
+												
+												</div>
+												<div class="span9" > <!-----reward form 1 ---->
+													<div id="show" class="collapse "> You can limit the available quantity of a reward as needed. Once the limit is reached, the reward will be marked as "sold out." The estimated delivery date is the date you expect to deliver the reward to backers. If the reward includes multiple items, set your date to when you expect everything to be delivered.</div>
+														
+														<div class="row-fluid">
+															<div class="span3" id="Border1">Pledge amount
+															</div>
+															<div class="span2"id="Border1" >
+																<input type="text" data-provide="typeahead"  value="$0">
+															</div>
+															<div class="span4" id="Border1">
+															</div>
+															<div class="span3" id="Border1"> X Delete
+															</div>													
+														</div>
+													
+														<div class="row-fluid">
+															<div class="span3" id="Border1">Discription
+															</div>
+															<div class="span9" >
+																<textarea   cols="40" rows="5">?</textarea>
+															</div>										
+														</div>
+														
+													
+														<div class="row-fluid">
+															<div class="span3" id="Border1">Estimated delivery
+															</div>
+															<div class="span5" id="Border1">
+																<select name="monthlist" form="monthform">
+																	<option value="">Select month</option>
+																	<option value="1">January</option>
+																	<option value="2">February</option>
+																	<option value="3">March</option>
+																	<option value="4">April</option>
+																	<option value="5">May</option>
+																	<option value="6">June</option>
+																	<option value="7">July</option>
+																	<option value="8">August</option>
+																	<option value="9">September</option>
+																	<option value="10">October</option>
+																	<option value="11">November</option>
+																	<option value="12">December</option></select>
+																</select>
+															</div>
+															<div class="span4" id="Border1">
+																<select name="yearlist" form="yearform" >
+																	<option value="">Select year</option>
+																		<option value="2013">2013</option>
+																		<option value="2014">2014</option>
+																		<option value="2015">2015</option>
+																		<option value="2016">2016</option>
+																		<option value="2017">2017</option>
+																		<option value="2018">2018</option>
+																</select>
+															</div>													
+														</div>
+													
+														<div class="row-fluid">
+															<div class="span3" id="Border1">Shipping details
+															</div>
+															<div class="span9"id="Border1" >
+																<select name="shippinglist" form="shipform">
+																	<option value="">Select an option</option>
+																	<option value="international">Shipping anywhere in the world</option>
+																	<option value="domestic">Shipping within the US only</option>
+																	<option value="none">No shipping involved</option>
+																</select>
+															</div>						
+														</div>
+														
+														<div class="row-fluid">
+															<div class="span3" id="Border1">
+																<span class="label label-success">B</span>0 BACKERS
+															</div>
+															<div class="span3 " >
+																<input type="checkbox" name="limit" value="Limit" data-toggle="collapse" data-target="#chk">Limit quantity
+															</div>
+															<div class="span5" >
+																<div id="chk" class="collapse "> 
+																	<input type="text">
+																</div>	
+															</div>										
+														</div>
+														
+												</div>
+											</div>	
+												<div class="row-fluid">
+													<div class="span6">
+													</div>
+														<button type="button" class="btn "  >
+															Add another reward
+														</button>	
+												</div>
+										</div>
+		
+										<div class="span3">
+											<h5>What is offer</h5>
+											<p>Copies of what you're making, unique experiences, and limited editions work great.</p><br />
+											
+											<h5>How to price</h5>
+											<ul>
+												<li>Price fairly, offer value</li>
+												<li>Most popular reward: $25</li>
+												<li>Something fun for $10 or less is always a good idea</li>
+												<li>Budget any domestic shipping costs into the reward price</li>
+											</ul><br />
+											
+											<h5 id="ColorPink">What's prohibited</h5>
+											<ul>
+												<li>Rewards not directly produced by the creator or the project itself</li>
+												<li>Financial incentives</li>
+												<li>Raffles, lotteries, and sweepstakes</li>
+												<li>Coupons, discounts, and cash-value gift cards</li>
+												<li>Rewards in bulk quantities (more than ten of an item)</li>
+												<li>For more, please review our list of prohibited items and subject matter</li>
+											</ul><br />
+											
+											<h5>Reward tips</h5>
+
+											
+										</div>
+
+									</div>	
+
+		                
+		                
+		                
+		                
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Story">
+		                <div class="hero-unit pagination-centered" >
+									  <h2>It's not just a project, it's a story.</h2>
+									  <small>Tell it with a video. It doesn't have to be fancy, it just has to be you.</small>  
+									</div>
+									<div class="row-fluid" >
+										<div class="span9">
+											<div class="row-fluid" id="BGBlue">
+												<div class="span3" >
+													<h5>&nbsp;&nbsp;Project Video</h5>
+												</div>
+												<div class="span9" >
+													<div>
+														<button type="button" class="btn">
+															Upload Video
+														</button>
+													</div>
+													<p>
+														The most important thing about project videos? Making one. Projects with a video have a much higher chance of success. It doesn't need to be an Oscar contender, just be yourself and explain what you want to do. For helpful tips and a dose of inspiration, check out our post on making an awesome project video.
+													</p>
+												</div>												
+											</div>	
+											
+											<div class="row-fluid"> <br /> </div>
+											<div class="row-fluid" id="BGBlue">
+												<div class="span3" >
+													<h5>&nbsp;&nbsp;Project Description</h5>
+												</div>
+												<div class="span9" >
+													<p>
+														Use your project description to share more about what you're raising funds to do and how you plan to pull it off. It's up to you to make the case for your project.
+													</p>
+													<textarea rows="5" cols="75" autofocus="autofocus">Enter text here...</textarea>
+													
+												</div>												
+											</div>	
+
+											<div class="row-fluid"> <br /> </div>
+											<div class="row-fluid" id="BGBlue">
+												<div class="span3" >
+													<h5>&nbsp;&nbsp;Risks and challenges</h5>
+												</div>
+												<div class="span9" >
+													<p>
+														<strong>What are the risks and challenges that come with completing your project, and how are you qualified to overcome them?</strong><br /><br />
+														When it comes to fulfillment, every project has potential obstacles, from production delays to permits to collaborator mishaps. What unique challenges might you face after your project is successfully funded? And if setbacks do arise (we hope they don't, but it happens!), how will you tackle them?<br /><br />
+														Addressing this from the start helps build a supportive community. Backers will understand your project is a work in progress and feel confident that you'll work hard to follow through, even when faced with challenges.<br/>
+													</p>
+													<textarea rows="5" cols="75" autofocus="autofocus">Enter text here...</textarea>
+													
+												</div>												
+											</div>
+
+											<div class="row-fluid"> <br /> </div>
+											<div class="row-fluid" id="BGBlue">
+												<div class="span3" >
+													<h5>&nbsp;&nbsp;Project FAQs</h5>
+												</div>
+												<div class="span9" >
+													<p>
+														You'll be able to add FAQs on your project page once your project goes live.
+													</p>
+												
+												</div>												
+											</div>													
+										</div>
+										<div class="span3">
+											<a href="#">
+											<iframe width="100%" height="200" src="http://www.youtube.com/embed/2FC7yx9NVNI?autoplay=0;" frameborder="0" allowfullscreen></iframe>
+											<h5>Make an awesome video</h5></a>
+										
+											
+											<h5>Important reminder</h5>
+											<p>Don't use music, images, video, or other content that you don't have the rights to. Reusing copyrighted material is almost always against the law and can lead to expensive lawsuits down the road. The easiest way to avoid copyright troubles is to create all the content yourself or use content that is free for public use.
+												For legal, mostly free alternatives, check out some of these great resources: SoundCloud, Vimeo Music Store, Free Music Archive, and ccMixter.</p>
+										</div>
+									</div>
+									
+									
+									
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Aboutyou">
+		                
+		                	 <div class="hero-unit" id="Aboutyou-Head">
+			                	<h2>Now a little bit about you.</h2>
+			                	<p>Tell people who you are! Supporting links are always nice.</p>
+			                </div>
+			                
+			                <div class="offset1 span7" id="leftContend">
+		                
+			                	<div id="contendProfilePhoto" >
+			                		
+			                		<div class="span3">
+			                			<strong>ProfilePhoto</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" />
+			                		</div>   
+			                	</div>
+		                	  	
+		                	  	
+		                	  	
+		                	  	<div id="contendName">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Name</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			If you had to describe your project in one tweet, how would you do it?
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contendBiography">
+		                	  		
+		                	  		<div id="contendBiography">
+		                	  		
+			                	  		<div class="span3">
+				                			<strong>Biography</strong>
+				                		</div>
+				                		<div class="span9">
+				                			<textarea cols="100" rows="10"></textarea><br />
+				                			
+				                		</div>
+		                	  		
+		                	  		</div>
+		                	  	
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	<div id="contentYourLocation">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>contentYourLocation</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><br />
+			                			
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	            	  	
+		                	  	<div id="contndWebside">
+		                	  		<div class="span3">
+			                			<strong>Webside</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<input type="text" /><a class="btn">click</a><br />
+			                			<p>Include links that will help backers get a sense of who you are and your qualifications to execute your project. Your blog or personal website, your Twitter account, and examples of your work are perfect!</p>
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	</div>
+		                	
+		                	<div class="span3" style="background-color: ">
+		                		<h4>Important notes on accountability</h4>
+		                		<p>Part of every creator’s job is earning their backers’ trust, especially backers who don’t personally know them. It’s up to you to make the case that you can successfully bring your project to life. Present your qualifications and share links that help reinforce them.</p>
+		                		
+		                		<h4>Returning creators</h4>
+		                		<p>Launching another project? Awesome! For the sake of transparency, just be sure all of them are under the same account. In special circumstances where this won't work (this projectเน€เธ�โ�ฌเน€เธ�๏ฟฝเน�๏ฟฝเธ�เน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�เน€เธ�๏ฟฝเน€เธ�๏ฟฝเน€เธ�๏ฟฝเน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�เน€เธ�๏ฟฝเน€เธ�๏ฟฝเน€เธ�๏ฟฝเน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�เน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�เน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�เน€เธ�โ�ฌเน€เธ�๏ฟฝเน�เธ�เธ�s a solo album, the last one was with your mariachi band) just be sure to link to any previous projects in your bio.</p>
+		                	</div>
+		              </div>
+		              
+		              <div class="tab-pane fade" id="Account">
+		                
+		                	 <div class="hero-unit" id="Account-Head">
+			                	<h2>Some housekeeping.</h2>
+			                	<p>Get your account verified and ready to receive pledges.</p>
+			                </div>
+			                
+			                <div class="offset1 span7" id="leftContend">
+		                
+			                	<div id="contendAmazonPayment" >
+			                		
+			                		<div class="span3">
+			                			<strong>AmazonPayment</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<h4>Step 1: Connect to Amazon Payments</h4>
+										<p>An Amazon Payments business account is required for processing credit card transactions and receiving funds. If you already have a business account, you can sign in as a returning customer.</p>
+			                			
+			                			<p>Note: An Amazon Payments account is different from the Amazon.com account you use for shopping!</p>
+			                			
+			                			<p>After setup, you must verify your account, which can take up to 7 days.</p>
+			                			<a href="#" class="btn btn-large btn-info">Amazon connect</a>
+			                		</div>
+					               
+			                	</div>
+		                	 
+		                	  	<div id="contendIdentity">
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Identity verification</strong>
+			                		</div>
+			                		<div class="span9">
+			                			<h4>Verify your identity with Kickstarter</h4>
+			                			<p>Every project requires a verified Kickstarter account. If you are running this project as an individual, verify your own name. If you are running this project as a legal entity (e.g. company or organization), verify your identity as the representative of this entity.</p>
+			                			<div class="innerDiv">
+				                			<div class="span3" >
+				                				legelname
+				                			</div>
+				                			<div class="span8" id="rightInput">
+				                				<input id="identityName" type="text" placeholder="name" />
+				                				<input id="IdentityLastName"type="text" placeholder="lastname"/>
+				                			</div>
+			                			</div>
+			                			
+			                			<div class="innerDiv">
+				                			<div class="span3" >
+				                				Birdday
+				                			</div>
+				                			<div class="span8" id="rightInput">
+				                				<select id="identityDay">
+				                					<option>Monday</option>
+				                				</select>
+				                				<select id="identityMonth">
+				                					<option>Januray</option>
+				                				</select>
+				                				<select id="identityYear">
+				                					<option>1992</option>
+				                				</select>
+				                			</div>
+			                			</div>
+			                			
+			                			<div class="innerDiv">
+				                			<div class="span3" >
+				                				HomeAddress
+				                			</div>
+				                			<div class="span8" id="rightInput">
+				                				<input id="identityAddress" type="text" placeholder="address" />
+				                				<input id="identityAddress2" type="text" placeholder="address2"/>
+				                				<input id="identityCity" type="text" placeholder="city"/>
+				                				<select id="identityStage">
+				                					<option>stage</option>
+				                				</select>
+				                				<input type="text" placeholder="zipCode" />
+				                				<span>In UnitedStage</span>
+				                				
+				                			</div>
+			                			</div>
+			                			
+			                		<a href="#" class="btn btn-info btn-large" >Click</a>	
+			                		</div>
+		                	  		
+		                	  	</div>
+		                	  	
+		                	  	
+		                	  	<div id="contendContractDetail">
+		                	  		
+		                	  		
+		                	  		<div class="span3">
+			                			<strong>Contact details</strong>
+			                		</div>
+			                		<div class="span9">
+			                			
+			                			<div class="innerDiv">
+				                			<div class="span3" >
+				                				Email
+				                			</div>
+				                			<div class="span8" id="rightInput">
+				                				<input type="text" placeholder="Email" />
+				                				<span>In order to create a project you’ll need to verify your email. Send a verification email to yourself using the button below, then use the link in the email to verify your email address.</span>
+				                				<a href="#" class="btn btn-large btn-info">send</a><br/><br /><br />
+				                			</div>
+			                			</div>
+			                			
+			                						                			
+			                			<div>
+				                			<div class="span3" >
+				                				Phone
+				                			</div>
+				                			<div class="span8" id="rightInput">
+				                				<input type="text" placeholder="Number" />
+				                				<a href="#" class="btn btn-info btn-large">Start</a>
+				                				<p>
+				                					Don’t worry, we’re not going to call you in the middle of the night. We’ll only contact you if there’s an issue with your project and we’re unable to reach you by email.
+				                				</p>				
+				                			</div>
+			                			</div>
+		                	  	</div>
+		                	  	
+		                	  	
+		                	</div>
+		                	
+		                	
+		                	
+		                
+		              </div>
+		              		<div class="span3" >
+		                		<h5>Eligibility requirements</h5>
+		                		<p>
+		                			To be eligible to start a Kickstarter project as a US creator, you need to satisfy the requirements of Amazon Payments:
+		                		</p>
+		                		
+		                		<ul>
+		                			<li>You are a permanent US resident with a Social Security Number (or EIN).
+</li>
+		                			<li>You have a US address, US bank account, and US state-issued ID (driverเน�โ�ฌ๏ฟฝs license).</li>
+		                			<li>You have a major US credit or debit card.</li>
+		                			<li>You are 18 years of age or older.</li>
+		                		</ul>
+		                		
+		                	</div>
+		              </div>
+		              <div class="tab-pane fade" id="Review">
+		                	<div class="hero-unit pagination-centered" >
+									  <h2>The homestretch!</h2>
+									  <small>Once everything is in place, submit your project for review.</small>  
+									</div>
+									<div class="row-fluid" >
+										<div class="span9">
+											<h3>Before you submit</h3>
+											<p>
+												Make sure you have:	
+											<ul>
+												<li>Clearly explained what you're raising funds to do.</li>
+												<li>Added a video! It's the best way to connect with your backers.</li>
+												<li>Created a series of well-priced, fun rewards. Not just thank-yous!</li>
+												<li>Previewed your project and gotten feedback from a friend.</li>
+												<li>Checked out other projects on Kickstarter and backed one to get a feel for the experience.</li>
+											</ul><br />
+											</p>
+											
+											<h3>After you submit</h3>
+											<p>
+												Once you've done everything listed above and submitted your project for review:
+											<ul>
+												<li>Your project will be reviewed to ensure it meets the Project Guidelines.</li>
+												<li>Within a few days, we'll send you a message about the status of your project.</li>
+												<li>If approved, you can launch whenever you're ready.</li>
+											</ul><br />
+											</p>
+										</div>
+										<div class="span3">
+											<img src="pic/nopic.png"> 
+											<p>
+											<h4>Untitle</h4>
+											by User <br /><br />
+											
+											<strong>Status: </strong> Unsubmitted
+											</p>
+										</div>
+							  </div>
+
+							</div>			
+		              </div>
+		              
+		            
+		        </form>    
 	      </div>	
 	</div>
 	
