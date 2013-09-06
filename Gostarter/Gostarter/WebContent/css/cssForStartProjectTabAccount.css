@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+#Account-Head
+{
+	text-align: center;		
+}
+#contendAmazonPayment
+{
+	height: 250px;
+	
+}
+
+#contendIdentity
+{
+	height: 450px;	
+
+}
+#identityDay
+{
+	width: 100px;
+}
+#identityMonth
+{
+	width: 100px;
+}
+#identityYear
+{
+	width: 100px;
+}
+
+#identityAddress
+{
+	width: 100% !important;
+}
+#identityAddress2
+{
+	width: 100% !important;
+}
+
+#identityCity
+{
+	width: 40% !important;
+}
+#identityStage
+{
+	width: 55%;
+}
+
+#contendContractDetail
+{
+	height: 350px;	
+	
+}

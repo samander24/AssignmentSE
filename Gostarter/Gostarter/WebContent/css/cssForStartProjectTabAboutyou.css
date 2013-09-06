@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+#Aboutyou-Head
+		{
+			text-align: center;
+		}
+
+		#contendProfilePhoto
+		{
+			height: 80px;
+		}
+		#contendName
+		{
+			height: 60px;
+		}
+		#contendBiography
+		{
+			height: 250px;
+		}
+		#contentYourLocation
+		{
+			height: 80px;
+		}
+		#contndWebside
+		{
+			height: 120px;
+		}
+		#contendName  input
+		{
+			width: 80%;
+		}
+		#contendBiography textarea
+		{
+			width: 400px;
+		}
+		#contentYourLocation input
+		{
+			width: 80%;
+		}
+
+		#rightInput > *
+		{
+			display: inline;
+			float: left;
+		}
+		#rightInput input
+		{
+			width: 155px;
+		}
