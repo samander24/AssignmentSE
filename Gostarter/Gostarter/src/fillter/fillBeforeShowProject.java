@@ -3,6 +3,7 @@ package fillter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -19,7 +20,9 @@ import javax.servlet.http.HttpSession;
 import org.apache.catalina.Session;
 
 import another.CreateProjectData;
+import another.Pleage;
 import another.Project;
+import another.Reward;
 
 /**
  * Servlet Filter implementation class fillBeforeShowProject
@@ -62,7 +65,20 @@ public class fillBeforeShowProject implements Filter {
 		
 		if(project!=null)
 		{
+			int amount = 0;
+			ArrayList<Pleage> allPleages = Pleage.getArrayListPleageByProject(project.getProjectTitle(), conn);
+			ArrayList<Reward> allReward = Reward.getArrayListReward(project.getProjectTitle(), conn, (HttpServletRequest)request);
+
+			
+			for(int i=0;i<allPleages.size();i++)
+			{
+				amount += allPleages.get(i).getPleageValue();
+			}
+			request.setAttribute("allReward",allReward);
 			request.setAttribute("project",project);
+			request.setAttribute("amount", amount);
+			request.setAttribute("count",allPleages.size() );
+			
 		}
 		else
 		{

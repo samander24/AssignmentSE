@@ -13,19 +13,19 @@ public class Reward {
 	String rewardTitle;
 	int valueReward;
 	String description;
-	Date estimateDelivery;
+	Date estimatedDelivery;
 	String projectTitle;
 	
 	
 	
 	
 	public Reward(String rewardTitle, int valueReward, String description,
-			Date estimateDelivery, String projectTitle) {
+			Date estimatedDelivery, String projectTitle) {
 		super();
 		this.rewardTitle = rewardTitle;
 		this.valueReward = valueReward;
 		this.description = description;
-		this.estimateDelivery = estimateDelivery;
+		this.estimatedDelivery = estimatedDelivery;
 		this.projectTitle = projectTitle;
 	}
 
@@ -74,15 +74,15 @@ public class Reward {
 
 
 
-	public Date getEstimateDelivery() {
-		return estimateDelivery;
+	public Date getestimatedDelivery() {
+		return estimatedDelivery;
 	}
 
 
 
 
-	public void setEstimateDelivery(Date estimateDelivery) {
-		this.estimateDelivery = estimateDelivery;
+	public void setestimatedDelivery(Date estimatedDelivery) {
+		this.estimatedDelivery = estimatedDelivery;
 	}
 
 
@@ -107,23 +107,23 @@ public class Reward {
 		
 		int valueReward;
 		String description;
-		Date estimateDelivery;
+		Date estimatedDelivery;
 		try
 		{
 			Statement stmt = conn.createStatement();
 			String cmd = String.format("select * from reward where rewardTitle='%s' and projectTitle='%s'"
 					,rewardTitle,projectTitle);
 			ResultSet obj = stmt.executeQuery(cmd);
-	
+			obj.next();
 			description = obj.getString("description");
 			rewardTitle = obj.getString("rewardTitle");
 			valueReward = obj.getInt("valueReward");
-			estimateDelivery = obj.getDate("estimateDelivery");
+			estimatedDelivery = obj.getDate("estimatedDelivery");
 			projectTitle  = obj.getString("projectTitle");
 			
 			ChangeString.reChangeQutoe(description);
 			
-			Reward reward = new Reward(rewardTitle, valueReward, description, estimateDelivery, projectTitle);
+			Reward reward = new Reward(rewardTitle, valueReward, description, estimatedDelivery, projectTitle);
 			return reward;
 		}
 		catch(Exception ex)
@@ -141,13 +141,13 @@ public class Reward {
 	
 			int valueReward;
 			String description;
-			Date estimateDelivery;
+			Date estimatedDelivery;
 			String rewardTitle;
 			
 			ArrayList<Reward> answer = new ArrayList<Reward>();
 			Statement stmt = conn.createStatement();
-			String cmd = String.format("select * from reward where projectTitle = '%s'"
-					+ "order by rewardValue",projectTitle);
+			String cmd = String.format("select * from reward where projectTitle = '%s' "
+					+ "order by valueReward",projectTitle);
 			ResultSet obj = stmt.executeQuery(cmd);
 			
 			while(obj.next())
@@ -156,12 +156,12 @@ public class Reward {
 				description = obj.getString("description");
 				rewardTitle = obj.getString("rewardTitle");
 				valueReward = obj.getInt("valueReward");
-				estimateDelivery = obj.getDate("estimateDelivery");
+				estimatedDelivery = obj.getDate("estimatedDelivery");
 //				projectTitle  = obj.getString("projectTitle");
 				
 				ChangeString.reChangeQutoe(description);
 				
-				Reward temReward = new Reward(rewardTitle, valueReward, description, estimateDelivery, projectTitle);
+				Reward temReward = new Reward(rewardTitle, valueReward, description, estimatedDelivery, projectTitle);
 				answer.add(temReward);
 			}
 			return answer;

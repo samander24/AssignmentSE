@@ -42,7 +42,7 @@
 	<%int numberDiv = (Integer)request.getAttribute("numberDiv"); %>
 	<%int max = userProject.size(); %>
 	<%int count = 0; %>
-	
+	<%int[] percent = (int[])request.getAttribute("percent"); %>
 	
 	<div class="hero-unit">
 		<h2>You Project<h2>
@@ -64,17 +64,17 @@
 					<p>by <%= temProject.getProfileName() %> <br /><%= temProject.getShortBlurp() %></p>
 				
 					<div class="progress progress-striped active">
-						 <div class="bar" style="width: 10%; height=50%;"></div><br />
+						 <div class="bar" style="width: <%= percent[count]%>%; height=50%;"></div><br />
 					</div>			
 					<div class="row-fluid">
 						<div class="span4">
-						<strong>10%</strong><br />funded
+						<strong><%= percent[count]%>%</strong><br />funded
 						</div>
 						<div class="span4">
 						<strong>$<%=temProject.getFundingGold() %></strong><br />pledged
 						</div>
 						<div class="span4">
-						<strong><%=count %></strong><br />day to go
+						<strong><%=temProject.getFundingDuration() %></strong><br />End project
 						</div>	
 					</div>
 					

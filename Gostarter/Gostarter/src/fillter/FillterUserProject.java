@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import another.CreateProjectData;
+import another.Pleage;
 import another.Project;
 import beans.User;
 
@@ -49,6 +50,7 @@ public class FillterUserProject implements Filter {
 		ServletContext ctx = session.getServletContext();
 		User loginUser = (User) session.getAttribute("loginUser");
 		ArrayList<Project> userProject = new ArrayList<Project>();
+		Connection conn = (Connection)ctx.getAttribute("conn");
 		
 		try
 		{
@@ -67,7 +69,27 @@ public class FillterUserProject implements Filter {
 		{
 			numberDiv++;
 		}
-			
+		
+		int percent[] = new int[userProject.size()]; 
+		
+		for(int i=0;i<userProject.size();i++)
+		{
+			Project tem = userProject.get(i);
+			ArrayList<Pleage> allPleages = Pleage.getArrayListPleageByProject(tem.getProjectTitle(), conn);
+			int sum = 0;
+			for(int j=0;j<allPleages.size();j++)
+			{
+				sum+=allPleages.get(j).getPleageValue();
+			}
+			percent[i] = (100*sum)/tem.getFundingGold();
+			if(percent[i]>100)
+			{
+				percent[i] = 100;
+			}
+		}
+		
+		
+		request.setAttribute("percent", percent);	
 		request.setAttribute("userProject", userProject);
 		request.setAttribute("numberDiv", numberDiv);
 		

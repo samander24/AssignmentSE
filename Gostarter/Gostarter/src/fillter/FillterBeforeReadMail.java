@@ -1,28 +1,32 @@
 package fillter;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
+import another.Mail;
 
 /**
- * Servlet Filter implementation class FillterLogin
+ * Servlet Filter implementation class FillterBeforeReadMail
  */
-@WebFilter({"/StartProject.jsp","/UserProject.jsp","/SentMail.jsp","/SentQuestion.jsp"})
-public class FillterLogin implements Filter {
+@WebFilter("/ReadMail.jsp")
+public class FillterBeforeReadMail implements Filter {
 
     /**
      * Default constructor. 
      */
-    public FillterLogin() {
+    public FillterBeforeReadMail() {
         // TODO Auto-generated constructor stub
     }
 
@@ -39,13 +43,20 @@ public class FillterLogin implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-		HttpSession session=((HttpServletRequest)request).getSession();
+		ServletContext ctx = request.getServletContext();
+		((HttpServletRequest)request).getSession();
 		
-		if(session.getAttribute("loginUser")==null)
-		{
-			RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");
-			dis.forward(request, response);
-		}
+		Connection conn = (Connection)ctx.getAttribute("conn");
+		PrintWriter out = response.getWriter();
+		String source = request.getParameter("source") ;
+		String destination = request.getParameter("destination");
+		String dateSent = request.getParameter("dateSent");
+		int mailNumber = Integer.parseInt(request.getParameter("mailNumber")); 
+		
+		Mail mail = Mail.createMail(source, destination, dateSent, mailNumber, conn, out);
+		
+		request.setAttribute("mail",mail );
+		
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}
