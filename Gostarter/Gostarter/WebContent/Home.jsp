@@ -1,3 +1,4 @@
+<%@page import="another.Project"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,7 +37,9 @@
 
 	<jsp:include page="NavBar.jsp"></jsp:include>	
 	
-	
+	<% Project firstProject =(Project)request.getServletContext().getAttribute("firstProject"); %>
+	<% int percentFirst =(Integer)request.getServletContext().getAttribute("percentFirst"); %>	
+	<% int pleageFirst = (Integer)request.getServletContext().getAttribute("pleageFirst") ;%>
 	<!--------Picture main------>
 		<div class="header">
 			<div class="row-fluid" id="mainContent" >	
@@ -61,27 +64,27 @@
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">  <!--------tab 1------>
 									<div class="span6">
-										<iframe width="100%" height="320" src="http://www.youtube.com/embed/QI9rPwl1KuM?autoplay=0;" frameborder="0" allowfullscreen></iframe>		
+										<% String urlVideo = firstProject.getUrlVideo().replace("watch?v=","embed/"); %>
+										<iframe width="100%" height="320" src="<%=urlVideo %>" frameborder="0" allowfullscreen></iframe>		
 									</div>
 									<div class="span6">
 										<p> 
-										<h4><a href=#>I'wont give up</a></h4>
-											I Won't Give Up - Jason Mraz (Jayesslee Cover)
+										<h4><a href="ShowProject.jsp?nameProject=<%=firstProject.getProjectTitle() %>"><%=firstProject.getProjectTitle() %></a></h4>
+											
 											 <br /><br />				
-											When I look into your eyes It's like watching the night sky Or a beautiful sunrise  Well, there's so much they hold  
-											And just like them old stars I see that you've come so far 	To be right where you are How old is your soul?	<br />
+											<%=firstProject.getShortBlurp() %>	<br />
 										
 												<div class="progress progress-striped active">
-													 <div class="bar" style="width: 5%;"></div>
+													 <div class="bar" style="width: <%=percentFirst %>%;"></div>
 												</div>
 												<div class="span3">
-												<strong>5%</strong><br />funded
+												<strong><%= percentFirst %>%</strong><br />funded
 												</div>
 												<div class="span3">
-												<strong>$5</strong><br />pledged
+												<strong>$<%= firstProject.getFundingGold() %></strong><br />pledged
 												</div>
 												<div class="span3">
-												<strong>100</strong><br />day to go
+												<strong><%= firstProject.getFundingDuration() %></strong><br />End project
 												</div>													
 										</p>
 									

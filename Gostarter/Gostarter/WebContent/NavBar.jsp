@@ -11,8 +11,8 @@
 									<li><a href="Discover.jsp"><strong>Discover</strong><br />grate Project</a></li>
 									<li><a href="Start.jsp"><strong>Start</strong><br />your Project</a></li>
 									<li>
-										<form class="form-search">
-											  <input type="text" class="input-medium search-query">
+										<form action="Search" method="get"  class="form-search">
+											  <input type="text" name="keyWord" class="input-medium search-query">
 											  <button type="submit" class="btn">Search</button>
 										</form>
 									</li>
