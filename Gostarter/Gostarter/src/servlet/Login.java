@@ -59,7 +59,7 @@ public class Login extends HttpServlet {
 		{
 			if(this.checkPassword(email, password, out,loginUser))
 			{
-				out.println("login success</br>");
+				out.println("Login success.Plese Check you mailbox.</br>");
 		//		out.println(loginUser.getEmail());
 		//		out.println(loginUser.getName());
 				
@@ -100,7 +100,7 @@ public class Login extends HttpServlet {
             {
             	loginUser.setEmail(obj.getString("email"));
             	loginUser.setName(obj.getString("userName"));
-            	loginUser.setUserType("user");
+            	loginUser.setUserType(obj.getString("userType"));
             	out.println(loginUser.getEmail());
             	return true;
             }

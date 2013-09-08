@@ -1,10 +1,12 @@
+<%@page import="another.Project"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Discover</title>
 <link href="css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-responsive.css"/ rel="stylesheet">
 <style>
@@ -27,12 +29,22 @@
 	   		top: 100px;
 	   		left: 50%;
 	   	}
+	   	#pic
+	   	{
+	   		width : 300px;
+	   		height : 200px;
+	   	}
+	   	
 </style>
 </head>
 <body>
 
 	<jsp:include page="NavBar.jsp"></jsp:include>
 	
+	<%ArrayList<Project> allProject = (ArrayList<Project>)request.getAttribute("allProject"); %>
+	<% int[] perCentProject = (int[])request.getAttribute("perCentProject");  %>
+	<% int numDiv = (Integer)request.getAttribute("numDiv"); %>
+	<% int count = 0; %>
 		
 		<div class="container" >	  	
 			<div class="container-fluid">
@@ -43,156 +55,46 @@
 					<h2>Discover Project</h2><p><h4>Passion, ideas, and ambition abound. Start exploring! <br/><br/></h4></p>
 					<h3>Staff Pick</h3>  <!-- staff pick --> 
 									<div class="row-fluid"> 
+									
+									
+									<%for(int i=0;i<numDiv;i++) {%>
 										<ul class="thumbnails">
+											<%for (int j=0;j<3&& count<allProject.size();j++,count++) {%>
+											<%Project tem = allProject.get(count); %>
 											<li class="span4">
 												<div class="thumbnail">    <!-- items  1  -->
-													<a href="ShowProject.jsp?nameProject=The Phantom Tollbooth"><img src="pic/P3/T1.jpg" alt="" href="#"></a>
-													<h5>Mother of Myth – Phenomenal Multi-platform Action RPG</h5>
-													<p>by Playnery <br /> Mother of Myth is a high-quality social action role-playing game developed for smartphones, tablets and web browsers.</p>
+													<a href="ShowProject.jsp?nameProject=<%= tem.getProjectTitle() %>"><img id="pic" src="<%= tem.getUrlProjectPicture() %>" alt="" href="#"></a>
+													<h5><%= tem.getProjectTitle() %></h5>
+													<p><%= tem.getProfileName() %> <br /> <%=tem.getShortBlurp() %></p>
 											
 													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 10%; height=50%;"></div><br />
+														 <div class="bar" style="width: <%= perCentProject[count] %>%; height=50%;"></div><br />
 													</div>			
 													<div class="row-fluid">
 														<div class="span4">
-														<strong>10%</strong><br />funded
+														<strong><%= perCentProject[count]%>%</strong><br />funded
 														</div>
 														<div class="span4">
-														<strong>$79</strong><br />pledged
+														<strong>$<%= tem.getFundingGold() %></strong><br />pledged
 														</div>
 														<div class="span4">
-														<strong>29</strong><br />day to go
+														<strong><%= tem.getFundingDuration() %></strong><br />End project
 														</div>	
 													</div>		
 	
 												</div>
 											</li>
-											<li class="span4">
-												<div class="thumbnail">    <!-- items  2  -->
-													<a href="#"><img src="pic/P3/T1.jpg" alt="" href="#"></a>
-													<h5>Mother of Myth – Phenomenal Multi-platform Action RPG</h5>
-													<p>by Playnery <br /> Mother of Myth is a high-quality social action role-playing game developed for smartphones, tablets and web browsers.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 10%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>10%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$79</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>29</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>
-											<li class="span4">
-												<div class="thumbnail">    <!-- items  3  -->
-													<a href="#"><img src="pic/P3/T1.jpg" alt="" href="#"></a>
-													<h5>Mother of Myth – Phenomenal Multi-platform Action RPG</h5>
-													<p>by Playnery <br /> Mother of Myth is a high-quality social action role-playing game developed for smartphones, tablets and web browsers.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 10%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>10%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$79</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>29</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>	
-											<a class="pull-right" href="Discover/staffpick.html"> See more staff picks </a>
+											<% } %>
 										</ul>
+									<%} %>
 									</div>
 
-					<h3>Popular This Week</h3>  <!-- Popular This Week--> 				
-									<div class="row-fluid">   <!--  pick --> 
-										<ul class="thumbnails">
-											<li class="span4">
-												<div class="thumbnail">    <!-- items  1  -->
-													<a href="#"><img src="pic/P4/T1.jpg" alt="" href="#"></a>
-													<h5>A better bicycle bell, made in the USA.</h5>
-													<p>by Spurcycle<br />Powerful sound from a trim, precision form—a bell for any bike: modern road, mountain, or vintage townie.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 99%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>99%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$1,120</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>15</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>
-											<li class="span4">
-												<div class="thumbnail">    <!-- items  1  -->
-													<a href="#"><img src="pic/P4/T1.jpg" alt="" href="#"></a>
-													<h5>A better bicycle bell, made in the USA.</h5>
-													<p>by Spurcycle<br />Powerful sound from a trim, precision form—a bell for any bike: modern road, mountain, or vintage townie.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 99%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>99%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$1,120</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>15</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>
-											<li class="span4">
-												<div class="thumbnail">    <!-- items  1  -->
-													<a href="#"><img src="pic/P4/T1.jpg" alt="" href="#"></a>
-													<h5>A better bicycle bell, made in the USA.</h5>
-													<p>by Spurcycle<br />Powerful sound from a trim, precision form—a bell for any bike: modern road, mountain, or vintage townie.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 99%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>99%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$1,120</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>15</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>
-											<a class="pull-right" href="#"> See more popular this week </a>
-										</ul>
-									</div>										
-					
+
+
+
+
+
+
 					
 					
 				</div>

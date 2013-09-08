@@ -124,7 +124,7 @@ public class Search extends HttpServlet {
 		{
 			ArrayList<String> allNameProject = new ArrayList<>();
 			Statement stmt = conn.createStatement();
-			String cmd = "select projectTitle from project";
+			String cmd = "select projectTitle from project order by fundingDuration Desc";
 			ResultSet obj = stmt.executeQuery(cmd);
 			
 			while(obj.next())

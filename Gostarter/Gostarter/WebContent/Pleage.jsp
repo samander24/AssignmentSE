@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Pleage</title>
 <link href="css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-responsive.css"/ rel="stylesheet">
 

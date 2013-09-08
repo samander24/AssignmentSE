@@ -120,12 +120,19 @@ public class StartProject extends HttpServlet {
 	//--------------------------------------------------------------------------------------------	
 		try
 		{
-			if(this.addToDatabase(request, out))
-			{
-				request.setAttribute("message", "Start project complete plese add reward for your project");
-				request.setAttribute("urlResult","Home.jsp" );
-			}
 			
+			if(checkIdentify(identityName, identityLastName, identityAddress, identityCity, identityStage, zipCode, amazonPayment))
+			{	
+				if(this.addToDatabase(request, out))
+				{
+					request.setAttribute("message", "Start project complete plese add reward for your project");
+					request.setAttribute("urlResult","Home.jsp" );
+				}
+			}
+			else
+			{
+				request.setAttribute("message","Identify Fail Plese check");
+			}
 		}
 		
 		catch(Exception ex)
@@ -136,7 +143,7 @@ public class StartProject extends HttpServlet {
 		
 		
 		RequestDispatcher dis = request.getRequestDispatcher("ResultStartProject.jsp");
-//		dis.forward(request, response);
+		dis.forward(request, response);
 		
 		
 	}
@@ -208,6 +215,12 @@ public class StartProject extends HttpServlet {
 			
 			throw ex;
 		}	
+		return true;
+	}
+	
+	private boolean checkIdentify(String identityName,String identityLastName,String identityAddress,String identityCity 
+			,String identityStage,String zipCode,String amazonPayment)
+	{
 		return true;
 	}
 }

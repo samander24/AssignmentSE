@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class FillterLogin
  */
-@WebFilter({"/StartProject.jsp","/UserProject.jsp","/SentMail.jsp","/SentQuestion.jsp"})
+@WebFilter({"/StartProject.jsp","/UserProject.jsp","/SentMail.jsp","/SentQuestion.jsp","/Pleage.jsp"})
 public class FillterLogin implements Filter {
 
     /**

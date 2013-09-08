@@ -101,6 +101,9 @@ public class PrepareForHome implements ServletContextListener, ServletContextAtt
     	arg0.getServletContext().setAttribute("firstProject", allProject.get(index[0]));
     	arg0.getServletContext().setAttribute("percentFirst", percentFirst);
     	arg0.getServletContext().setAttribute("pleageFirst", temSumPleage[0]);
+    	
+    	
+    	
  
     }
 

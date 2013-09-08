@@ -1,9 +1,18 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="another.Project"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+	<% ArrayList<Project> pageOne = (ArrayList<Project>)session.getAttribute("projectForPage1"); %>
+	<% ArrayList<Project> pageTwo = (ArrayList<Project>)session.getAttribute("projectForPage2"); %>
+	<% int[] perPageOne = (int[])session.getAttribute("percentForPage1"); %>
+	<% int[] perPageTwo = (int[])session.getAttribute("percentForPage2"); %>
+	
+	
+
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Go starter</title>
 	<style> 
@@ -27,6 +36,12 @@
 	   		top: 100px;
 	   		left: 50%;
 	   	}
+	   	
+	   	#picProject
+	   	{
+	   		width: 300px;
+	   		height: 300px;
+	   	}
 	</style>
 	
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
@@ -37,9 +52,13 @@
 
 	<jsp:include page="NavBar.jsp"></jsp:include>	
 	
+	
+	
 	<% Project firstProject =(Project)request.getServletContext().getAttribute("firstProject"); %>
 	<% int percentFirst =(Integer)request.getServletContext().getAttribute("percentFirst"); %>	
 	<% int pleageFirst = (Integer)request.getServletContext().getAttribute("pleageFirst") ;%>
+	
+	
 	<!--------Picture main------>
 		<div class="header">
 			<div class="row-fluid" id="mainContent" >	
@@ -171,97 +190,33 @@
 									<div class="span10">
 										<div class="row-fluid">
 										<ul class="thumbnails">
+											
+											<% for (int i=0;i<pageOne.size();i++) 
+											{ %>
+											<% Project tem = pageOne.get(i); %> 
 											<li class="span3">
 												<div class="thumbnail">  <!-- item 1 -->
-													<a href="#"><img src="pic/P1/T1.jpg" alt="" align="middle"></a>
-													<h5>GEEK: A New USB Awesomifier for Headphones</h5>
-													<p>by Gavin Fish <br />An on-the-go, high-res DAC and headphone amp that plugs into your computer's USB port. Your videos, music, & games will rule</p>
+													<a href="ShowProject.jsp?nameProject=<%=tem.getProjectTitle() %>"><img id="picProject" src="<%= tem.getUrlProjectPicture() %>" alt="" align="middle"></a>
+													<h5><%= tem.getProjectTitle() %></h5>
+													<p><%= tem.getProfileName() %> <br /><%= tem.getShortBlurp() %></p>
 												
 													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 15%; height=50%;"></div><br />
+														 <div class="bar" style="width: <%= perPageOne[i]%>%; height=50%;"></div><br />
 													</div>			
 													<div class="row-fluid">
 														<div class="span4">
-														<strong>15%</strong><br />funded
+														<strong><%= perPageOne[i]%>%</strong><br />funded
 														</div>
 														<div class="span4">
-														<strong>$200</strong><br />pledged
+														<strong>$<%=tem.getFundingGold() %></strong><br />pledged
 														</div>
 														<div class="span4">
-														<strong>66</strong><br />day to go
+														<strong><%= tem.getFundingDuration() %></strong><br />End project
 														</div>	
 													</div>		
 												</div>
 											</li>
-											<li class="span3">
-												<div class="thumbnail">  <!-- item 2 -->
-													<a href="#"><img src="pic/P1/T1.jpg" alt="" ></a>
-													<h5>GEEK: A New USB Awesomifier for Headphones</h5>
-													<p>by Gavin Fish<br/> An on-the-go, high-res DAC and headphone amp that plugs into your computer's USB port. Your videos, music, & games will rule</p>
-												
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 15%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>15%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$200</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>66</strong><br />day to go
-														</div>	
-													</div>		
-													
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">  <!-- item 3 -->
-													<a href="#"><img src="pic/P1/T1.jpg" alt="" ></a>
-													<h5>GEEK: A New USB Awesomifier for Headphones</h5>
-													<p>by Gavin Fish <br />An on-the-go, high-res DAC and headphone amp that plugs into your computer's USB port. Your videos, music, & games will rule</p>
-												
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 15%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>15%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$200</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>66</strong><br />day to go
-														</div>	
-													</div>	
-													
-												</div>
-											</li>	
-											<li class="span3">
-												<div class="thumbnail">  <!-- item 4 -->
-													<a href="#"><img src="pic/P1/T1.jpg" alt="" ></a>
-													<h5>GEEK: A New USB Awesomifier for Headphones</h5>
-													<p>by Gavin Fish<br />An on-the-go, high-res DAC and headphone amp that plugs into your computer's USB port. Your videos, music, & games will rule</p>
-												
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 15%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>15%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$200</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>66</strong><br />day to go
-														</div>	
-													</div>													
-												
-												</div>
-											</li>										
+											<%} %>										
 										</ul>
 										</div>
 									</div>
@@ -277,99 +232,34 @@
 									<div class="span10">
 										<div class="row-fluid">
 										<ul class="thumbnails">
+											
+											<%for(int i=0;i<pageTwo.size();i++) {%>
+											<% Project theTem = pageTwo.get(i); %>
 											<li class="span3">
 												<div class="thumbnail">    <!-- items  1  -->
-													<a href="#"><img src="pic/P2/T1.jpg" alt="" href="#"></a>
-													<h5>[Project Phoenix] Japan's indie RPG feat. AAA talent!</h5>
-													<p>by Creative Intelligence Arts, Inc. Project Phoenix is a JRPG with a squad based RTS game design, brought to you by veteran developers and creators from the East and West.</p>
+													<a href="ShowProject.jsp?nameProject=<%=theTem.getProjectTitle() %>"><img src="<%=theTem.getUrlProjectPicture() %>" alt="" href="#"></a>
+													<h5><%=theTem.getProjectTitle() %></h5>
+													<p><%= theTem.getProfileName() %><br/><%= theTem.getShortBlurp() %> </p>
 											
 													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 33%; height=50%;"></div><br />
+														 <div class="bar" style="width: <%=perPageTwo[i]%>%; height=50%;"></div><br />
 													</div>			
 													<div class="row-fluid">
 														<div class="span4">
-														<strong>33%</strong><br />funded
+														<strong><%=perPageTwo[i] %></strong><br />funded
 														</div>
 														<div class="span4">
-														<strong>$155</strong><br />pledged
+														<strong>$<%= theTem.getFundingGold() %></strong><br />pledged
 														</div>
 														<div class="span4">
-														<strong>77</strong><br />day to go
+														<strong><%= theTem.getFundingDuration() %></strong><br />End project
 														</div>	
 													</div>		
 	
 												</div>
 											</li>
-											<li class="span3">
-												<div class="thumbnail">    <!-- items  2 -->
-													<a href="#"><img src="pic/P2/T1.jpg" alt="" href="#"></a>
-													<h5>[Project Phoenix] Japan's indie RPG feat. AAA talent!</h5>
-													<p>by Creative Intelligence Arts, Inc. Project Phoenix is a JRPG with a squad based RTS game design, brought to you by veteran developers and creators from the East and West.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 33%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>33%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$155</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>77</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">    <!-- items  3  -->
-													<a href="#"><img src="pic/P2/T1.jpg" alt="" href="#"></a>
-													<h5>[Project Phoenix] Japan's indie RPG feat. AAA talent!</h5>
-													<p>by Creative Intelligence Arts, Inc. Project Phoenix is a JRPG with a squad based RTS game design, brought to you by veteran developers and creators from the East and West.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 33%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>33%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$155</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>77</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>	
-											<li class="span3">
-												<div class="thumbnail">    <!-- items  4  -->
-													<a href="#"><img src="pic/P2/T1.jpg" alt="" href="#"></a>
-													<h5>[Project Phoenix] Japan's indie RPG feat. AAA talent!</h5>
-													<p>by Creative Intelligence Arts, Inc. Project Phoenix is a JRPG with a squad based RTS game design, brought to you by veteran developers and creators from the East and West.</p>
-											
-													<div class="progress progress-striped active">
-														 <div class="bar" style="width: 33%; height=50%;"></div><br />
-													</div>			
-													<div class="row-fluid">
-														<div class="span4">
-														<strong>33%</strong><br />funded
-														</div>
-														<div class="span4">
-														<strong>$155</strong><br />pledged
-														</div>
-														<div class="span4">
-														<strong>77</strong><br />day to go
-														</div>	
-													</div>		
-	
-												</div>
-											</li>										
-										</ul>
+												<%} %>																			<li class="span3">
+											</ul>
 										</div>
 									</div>
 									<div class="span1">

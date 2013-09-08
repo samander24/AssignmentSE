@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>StartProject</title>
 
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 	<link href="css/bootstrap-responsive.css"/ rel="stylesheet">
@@ -284,6 +284,7 @@
 														<input name="urlVideo" type="text" placeholder="URL Video" />
 													</div>
 													<p>
+														<strong style="color:red;">Plese Youtube Link</strong> <br/>
 														The most important thing about project videos? Making one. Projects with a video have a much higher chance of success. It doesn't need to be an Oscar contender, just be yourself and explain what you want to do. For helpful tips and a dose of inspiration, check out our post on making an awesome project video.
 													</p>
 												</div>												

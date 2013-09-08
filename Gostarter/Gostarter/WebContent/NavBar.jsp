@@ -37,11 +37,13 @@
                      				</strong>
                      				<b class="caret"></b></a>
                       				<ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                        				<li role="presentation"><a role="menuitem" tabindex="-1" href="Profile.jsp">Profile</a></li>
-                        				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">EditProfile</a></li>
+                        				
                         				<li role="presentation"><a role="menuitem" tabindex="-1" href="UserProject.jsp">YourProject</a></li>
               							<li role="presentation"><a role="menuitem" tabindex="-1" href="SentMail.jsp">SentMail</a></li>
               							<li role="presentation"><a role="menuitem" tabindex="-1" href="MailBox.jsp">Mailbox</a></li>
+              							<%if(loginUser.getUserType().equalsIgnoreCase("admin")){ %>
+              							<li role="presentation"><a role="menuitem" tabindex="-1" href="Promotion.jsp">Promotion</a></li>
+              							<%} %>
               							<li role="presentation"><a role="menuitem" tabindex="-1" href="Logout.jsp">Logout</a></li>
                       					
                       				</ul>
